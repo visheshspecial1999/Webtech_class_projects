@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My resume</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        .top-block {
+            /* background-color: rgb(0, 0, 65); */
+            background-image: linear-gradient(to left,
+                    rgb(0, 0, 99),
+                    rgba(0, 208, 255, 0.555));
+            display: flex;
+            flex-direction: row-reverse;
+            box-shadow: 0px 0px 10px 70px rgb(248, 248, 248);
+        }
+
+        nav {
+            padding: 10px 50px;
+            /* background-color: yellow; */
+        }
+
+        nav ul {
+            list-style-type: none;
+            /* background-color: aqua; */
+            /* position: relative;
+        left: 1028px;
+        width: 20%; */
+            display: flex;
+            /* flex-direction: row-reverse; */
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-left: 10px;
+            padding-right: 10px;
+            border-right: 1px solid rgb(255, 255, 255);
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition-property: all;
+            transition-duration: 0.5s;
+        }
+
+        nav ul li a:hover {
+            padding-bottom: 3px;
+            /* background-color: red; */
+            border-color: white;
+        }
+
+        header {
+            height: 600px;
+            /* padding: 100px 10px; */
+            /* background-color: ; */
+            background-image: linear-gradient(to top right,
+                    rgb(0, 0, 65),
+                    rgb(0, 4, 83),
+                    rgba(0, 208, 255, 0.572),
+                    aqua,
+                    blue);
+            background-size: 300% 300%;
+            background-repeat: no-repeat;
+            justify-content: center;
+            align-items: center;
+            animation-name: bcolor;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            display: flex;
+        }
+
+        @keyframes bcolor {
+            0% {
+                /* background-position: -10%; */
+                /* transform: rotateZ(360deg); */
+            }
+
+            50% {
+                background-size: 200% 200%;
+                background-image: linear-gradient(to top right,
+                        rgba(0, 208, 255, 0.572),
+                        rgb(0, 4, 83),
+                        rgba(0, 208, 255, 0.572),
+                        aqua,
+                        blue);
+                background-position: -150px -150px;
+            }
+
+            100% {}
+        }
+
+        header:hover {
+            /* background-color: rgba(227, 227, 227, 0.675); */
+        }
+
+        header section {
+            /* border: 5px solid yellow; */
+            width: 60%;
+            height: 400px;
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .photo {
+            background-image: url("data:image/jpeg;base64,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");
+            height: 83%;
+            width: 40%;
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border: 6px double rgb(245, 245, 245);
+            border-radius: 50%;
+            background-position: 0px -3px;
+            transition: all 0.1s;
+        }
+
+        .photo:hover {
+            transform: scale(1.05);
+        }
+
+        .info-block {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 390px;
+            /* background-color: yellow; */
+            color: white;
+            /* border: 3px solid black; */
+        }
+
+        .info-block h1 {
+            font-size: 53px;
+            padding: 5px;
+            /* position: absolute;
+        top: 50px; */
+        }
+
+        .info-block p {
+            padding: 5px;
+            /* position: absolute;
+        top: 135px; */
+            text-align: justify;
+        }
+
+        .navs {
+            /* background-color: aqua; */
+            /* position: absolute; */
+            bottom: 20px;
+        }
+
+        .navs>li {
+            display: inline-block;
+            list-style-type: none;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            padding: 35px 18px;
+            background-color: rgb(0, 0, 65);
+            margin-left: 15px;
+            transition-property: all;
+            border: 5px solid transparent;
+            transition-duration: 0.5s;
+        }
+
+        .navs>li:hover {
+            background-color: rgba(0, 0, 65);
+            border: 5px solid rgba(0, 208, 255, 0.572);
+            transform: scale(1.1);
+        }
+
+        .navs>li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        .navs :nth-child(3):hover .contact-links {
+            /* background-color: red; */
+            display: block;
+        }
+
+        nav ul :nth-child(3):hover .contact-links {
+            /* background-color: red; */
+            display: block;
+            left: 100px;
+            width: 100px;
+        }
+
+        .contact-links {
+            display: none;
+            position: absolute;
+            top: 100px;
+            /* right: 10px; */
+            background-color: whitesmoke;
+            list-style-type: none;
+            padding: 10px 13px;
+            border-radius: 10px;
+        }
+
+        .contact-links li {
+            width: 100%;
+            /* background-color: red; */
+        }
+
+        .contact-links li a {
+            display: inline-block;
+            color: rgb(1, 1, 93);
+            text-decoration: none;
+            width: 100%;
+            padding: 0px 10px;
+            /* width: 100%; */
+        }
+
+        .contact-links li a:hover {
+            background-color: rgb(205, 205, 205);
+        }
+
+        .rotate-con {
+            animation-name: contact;
+            /* background-color: red; */
+            animation-duration: 0.5s;
+            /* animation-delay: 5s; */
+            animation-iteration-count: infinite;
+        }
+
+        .rotate-con:hover {
+            animation-duration: 0s;
+        }
+
+        @keyframes contact {
+            0% {
+                transform: rotateZ(0deg);
+            }
+
+            25% {
+                /* background-color: yellow; */
+                transform: rotateZ(5deg);
+            }
+
+            75% {
+                transform: rotateZ(-5deg);
+            }
+
+            100% {
+                transform: rotateZ(0deg);
+            }
+        }
+
+        a,h1,p
+         {
+            color: rgb(0, 0, 65);
+        }
+
+        @media screen and (min-width: 240px) and (max-width: 468px) {
+            .photo {
+                width: 30vw;
+                height: 30vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="top-block">
+        <nav>
+            <ul>
+                <li><a href="">Resume</a></li>
+                <li><a href="">Project</a></li>
+                <li>
+                    <a href="https://wa.me/9565572365?text=Hello%20%2C%20vishesh">Contact</a>
+                    <ul class="contact-links">
+                        <li><a href="">LinkedIn</a></li>
+                        <li><a href="">Email</a></li>
+                        <li><a href="">Github</a></li>
+                        <li>
+                            <a href="https://wa.me/9565572365?text=Hello%20%2C%20vishesh">Whatsapp</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </section>
+
+    <header>
+        <section>
+            <div class="photo"></div>
+            <div class="info-block">
+                <h1>vishesh kumar</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+                    ducimus quos, atque dolore aliquid magnam doloremque expedita
+                    reprehenderit rerum. Eligendi?
+                </p>
+                <ul class="navs">
+                    <li><a href="https://www.google.com" target="_blank">Resume</a></li>
+                    <li><a href="">Project</a></li>
+                    <li class="rotate-con">
+                        <a href="" target="_blank">Contact</a>
+                        <ul class="contact-links">
+                            <li><a href="">LinkedIn</a></li>
+                            <li><a href="">Email</a></li>
+                            <li><a href="">Github</a></li>
+                            <li>
+                                <a href="https://wa.me/9565572365?text=Hello%20%2C%20Sir">Whatsapp</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </header>
+</body>
+
+</html>

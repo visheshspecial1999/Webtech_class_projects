@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trasition property</title>
+    <style>
+        .container{
+            background-color: red;
+            width: 50px;
+            height: 150px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            transition-property: all;
+            transition-duration:10s;
+            transition-timing-function: ease-in-out;
+            transition-delay:2s;
+        }
+
+        .container:hover{
+            width: 500px;
+            background-color:rgba(rgb(240, 34, 34), rgb(41, 207, 41), rgba(20, 20, 168, 0.596), alpha)
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+    
+</body>
+</html>

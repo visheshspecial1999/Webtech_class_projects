@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-basis</title>
+    <style>*{
+        box-sizing: border-box;
+        margin:0;
+        padding: 0;
+    }
+        .container {
+            box-sizing: border-box;
+            background-color: red;
+            padding: 20px;
+            /* height: 500px; */
+            display: flex;
+            gap: 50px;
+            /* flex-direction: row; */
+            flex-wrap: wrap;
+            /* flex-direction: column; */
+        }
+
+        .item {width: 100px;
+            height: 100px;
+            border: 3px solid rgb(rgb(58, 17, 17), rgb(16, 97, 16), rgb(23, 23, 201));
+            background-color: yellow;
+            padding: 10px;
+            overflow: hidden;
+            flex-grow: 1;
+        }
+
+        .item1 {
+            flex-basis: 50%;
+                order: 1;
+                flex-shrink: 5;
+                flex-grow: 1;
+        }
+
+        .item2 {
+            flex-basis: 20%;
+            flex-shrink: 1;
+            order: 5;
+            flex-grow: 1;
+
+        }
+
+        .item3 {
+            flex-basis: 20%;
+            flex-shrink: 1;
+            order: 4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item item1"><h1>1</h1> ipsum dolor sit amet consectetur adipisicing elit. Laborum, iste repellat magni
+            explicabo non optio et ab praesentium molestiae. Quisquam rerum, hic numquam nobis ducimus tenetur harum
+            architecto fuga earum rem qui recusandae modi in et molestiae. Sint quis, laudantium impedit, molestiae
+            necessitatibus labore suscipit animi maiores vel consequuntur libero fuga iure, rerum quos autem repellat
+            ullam vitae dicta ipsam. Quod incidunt voluptas quas voluptatum dicta exercitationem ex, magnam id velit
+            blanditiis facilis reprehenderit provident quam assumenda, rem iure tempora unde. Dignissimos, dolore
+            assumenda? Sapiente nulla esse odit. Praesentium dicta dolor porro nulla voluptatem veniam ut at amet ea a!
+        </div>
+        <div class="item item2"><h2>3</h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro iure cumque excepturi
+            dolor reprehenderit maiores placeat corrupti culpa voluptatum a minima illo quo unde cum quisquam tempore in
+            dolores, assumenda soluta veritatis sed voluptate id recusandae saepe! Rem eius doloremque omnis, ratione,
+            rerum accusantium, saepe maiores nihil distinctio esse magnam!</div>
+        <div class="item item3"><h3>4</h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis mollitia voluptate
+            libero iusto a quidem pariatur accusantium blanditiis. Officia vitae dolorem tempore iure earum! Modi.</div>
+    </div>
+
+</body>
+
+</html>
